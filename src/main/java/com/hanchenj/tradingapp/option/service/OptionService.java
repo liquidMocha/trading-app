@@ -14,7 +14,7 @@ public class OptionService {
         this.client = client;
     }
 
-    List<Option> getOptionChain(String ticker){
-        return client.getOptionChain(ticker);
+    public List<Option> getOptionChain(String ticker, String authToken) {
+        return client.getOptionChain(ticker, authToken);
     }
 }

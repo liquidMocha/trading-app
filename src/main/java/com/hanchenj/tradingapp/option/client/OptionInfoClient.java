@@ -5,5 +5,5 @@ import com.hanchenj.tradingapp.option.domain.Option;
 import java.util.List;
 
 public interface OptionInfoClient {
-    List<Option> getOptionChain(String ticker);
+    List<Option> getOptionChain(String ticker, String authToken);
 }
