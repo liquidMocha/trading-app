@@ -1,0 +1,16 @@
+resources:
+  - name: trading-app
+    type: git
+    source: {
+      uri: "https://github.com/liquidMocha/trading-app.git",
+      username: ((username)),
+      password: ((password))
+    }
+
+jobs:
+  - name: build
+    plan:
+      - get: trading-app
+        trigger: true
+      - task: build
+        file: "pipeline/build.yml"

@@ -1,0 +1,6 @@
+platform: linux
+inputs:
+  - name: trading-app
+
+run:
+  path: pipeline/build.sh
