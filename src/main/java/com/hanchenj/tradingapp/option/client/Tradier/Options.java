@@ -16,7 +16,7 @@ class Options {
     List<com.hanchenj.tradingapp.option.domain.Option> transformToDomainOptions() {
         return options.stream().map(theOption -> new com.hanchenj.tradingapp.option.domain.Option(
                 theOption.getAsk(),
-                theOption.getBid(),
+                Double.valueOf(theOption.getBid()),
                 theOption.getChange(),
                 theOption.getChangePercentage(),
                 theOption.getClose(),

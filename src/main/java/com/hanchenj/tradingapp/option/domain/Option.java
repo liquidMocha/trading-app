@@ -2,13 +2,15 @@
 package com.hanchenj.tradingapp.option.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
+@Builder
 public class Option {
     private Double ask;
-    private Long bid;
+    private Double bid;
     private Long change;
     private Long changePercentage;
     private Long close;

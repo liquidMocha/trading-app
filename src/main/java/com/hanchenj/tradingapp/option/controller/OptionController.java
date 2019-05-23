@@ -3,8 +3,8 @@ package com.hanchenj.tradingapp.option.controller;
 import com.hanchenj.tradingapp.option.domain.Option;
 import com.hanchenj.tradingapp.option.service.OptionService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,9 +18,9 @@ public class OptionController {
         this.optionService = optionService;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/{ticker}")
     public List<Option> getOptionChain(
-            @RequestParam("ticker") String ticker,
+            @PathVariable("ticker") String ticker,
             @RequestHeader("Authorization") String token
     ) {
         return optionService.getOptionChain(ticker, token);
