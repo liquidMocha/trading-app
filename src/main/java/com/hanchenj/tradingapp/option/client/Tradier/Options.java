@@ -14,24 +14,17 @@ class Options {
     private List<Option> options;
 
     List<com.hanchenj.tradingapp.option.domain.Option> transformToDomainOptions() {
-        return options.stream().map(theOption -> new com.hanchenj.tradingapp.option.domain.Option(
-                theOption.getAsk(),
-                Double.valueOf(theOption.getBid()),
-                theOption.getChange(),
-                theOption.getChangePercentage(),
-                theOption.getClose(),
-                theOption.getExpirationDate(),
-                theOption.getExpirationType(),
-                theOption.getLast(),
-                theOption.getOpen(),
-                theOption.getOpenInterest(),
-                theOption.getOptionType(),
-                theOption.getPrevclose(),
-                theOption.getRootSymbol(),
-                theOption.getStrike(),
-                theOption.getSymbol(),
-                theOption.getTradeDate(),
-                theOption.getType(),
-                theOption.getUnderlying())).collect(Collectors.toList());
+        return options.stream().map(theOption ->
+                new com.hanchenj.tradingapp.option.domain.Option(
+                        theOption.getAsk(),
+                        Double.valueOf(theOption.getBid()),
+                        theOption.getExpirationDate(),
+                        theOption.getExpirationType(),
+                        theOption.getRootSymbol(),
+                        theOption.getStrike(),
+                        theOption.getSymbol(),
+                        theOption.getTradeDate(),
+                        theOption.getUnderlying()))
+                .collect(Collectors.toList());
     }
 }
