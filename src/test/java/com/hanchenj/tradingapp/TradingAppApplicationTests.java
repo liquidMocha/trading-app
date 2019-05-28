@@ -30,7 +30,7 @@ public class TradingAppApplicationTests {
     private MockMvc mockMvc;
 
     @MockBean
-    OptionInfoClient optionInfoClient;
+    private OptionInfoClient optionInfoClient;
 
     @Test
     public void listOptionChainForSingleTicker() throws Exception {
@@ -39,14 +39,13 @@ public class TradingAppApplicationTests {
 
         when(optionInfoClient.getOptionChain(any(), any())).thenReturn(optionChain);
 
-        URI uri = new URI("/APPL");
+        URI uri = new URI("/option/APPL");
 
         mockMvc.perform(
-                get(uri).header("Authorization", "abc")
-        ).andExpect(status().isOk())
+                get(uri).header("Authorization", "abc"))
+                .andExpect(status().isOk())
                 .andExpect(jsonPath("[0].ask").value(20.1))
-                .andExpect(jsonPath("[0].bid").value(22.2))
-        ;
+                .andExpect(jsonPath("[0].bid").value(22.2));
     }
 
 }

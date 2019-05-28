@@ -2,14 +2,12 @@ package com.hanchenj.tradingapp.option.controller;
 
 import com.hanchenj.tradingapp.option.domain.Option;
 import com.hanchenj.tradingapp.option.service.OptionService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "option")
 public class OptionController {
 
     private OptionService optionService;
