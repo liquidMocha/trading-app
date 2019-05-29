@@ -2,9 +2,15 @@
 package com.hanchenj.tradingapp.option.client.Tradier;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 class Option {
 
     @JsonProperty
@@ -18,7 +24,8 @@ class Option {
     @JsonProperty
     private Long averageVolume;
     @JsonProperty
-    private Long bid;
+    @Builder.Default
+    private Long bid = 0L;
     @JsonProperty
     private Long bidDate;
     @JsonProperty
